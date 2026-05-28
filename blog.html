@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <title>화곡 셔츠룸 블로그 │ 서버 웜업의 진실 ─ 거리에서 시작되는 퍼포먼스</title>
+    <meta name="description" content="화곡 셔츠룸 마포지점 블로그. 서버 웜업에 대한 냉철한 분석. 규격화된 소비를 거부하고 진짜 웜업을 원한다면 읽어라. 지금 010-6279-0862로 전화하라.">
+    <meta name="keywords" content="화곡 셔츠룸,마포 셔츠룸,서버 웜업,블로그,화곡 서버,마포 서버,brutalist 셔츠룸">
+    <link rel="canonical" href="https://sf-t3-1779642675702-398.pages.dev/">
+    <meta property="og:title" content="화곡 셔츠룸 블로그 ─ 서버 웜업, 그 충격적인 진실">
+    <meta property="og:description" content="화곡 셔츠룸 마포지점 블로그. 서버 웜업에 대한 냉철한 분석. 규격화된 소비를 거부하고 진짜 웜업을 원한다면 읽어라. 010-6279-0862">
+
+    <style>
+        /* ── RESET & BASE ── */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            background: #0a0a0a; 
+            color: #e0e0e0; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #ff2a2a; text-decoration: none; }
+        a:hover { color: #ff5555; }
+        img, svg { max-width: 100%; display: block; }
+        ul { list-style: none; }
+        /* ── TYPOGRAPHY ── */
+        h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 1rem; }
+        h2 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.8rem; }
+        h3 { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.6rem; }
+        p, li, blockquote { font-size: 1.1rem; margin-bottom: 1rem; }
+        .mono { font-family: 'Courier New', monospace; letter-spacing: 0.05em; }
+        /* ── COLORS ── */
+        .bg-black { background: #0a0a0a; }
+        .bg-white { background: #f5f5f5; color: #0a0a0a; }
+        .bg-accent { background: #ff2a2a; color: #0a0a0a; }
+        .text-white { color: #f5f5f5; }
+        .text-accent { color: #ff2a2a; }
+        /* ── LAYOUT ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* ── NAV ── */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 1.5rem 0; border-bottom: 2px solid #ff2a2a; 
+        }
+        nav .logo { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; color: #ff2a2a; }
+        nav ul { display: flex; gap: 2rem; }
+        nav ul li a { font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.5rem 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        nav ul li a:hover { border-bottom-color: #ff2a2a; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger span { display: block; width: 25px; height: 3px; background: #f5f5f5; margin: 4px 0; }
+        /* ── HERO ── */
+        .hero { padding: 4rem 0; border-bottom: 1px solid #333; }
+        .hero h1 { font-size: 4rem; line-height: 1; }
+        .hero .sub { font-size: 1.4rem; margin-top: 1rem; color: #888; }
+        /* ── CONTENT ── */
+        .blog-post { padding: 3rem 0; max-width: 800px; margin: 0 auto; }
+        .blog-post h2 { font-size: 2rem; margin-top: 2rem; border-left: 5px solid #ff2a2a; padding-left: 1rem; }
+        .blog-post blockquote { 
+            border-left: 4px solid #ff2a2a; padding-left: 1.5rem; margin: 2rem 0;
+            font-style: italic; color: #ccc; 
+        }
+        .blog-post .meta { font-size: 0.9rem; color: #666; margin-bottom: 2rem; }
+        .blog-post .cta { 
+            background: #ff2a2a; color: #0a0a0a; display: inline-block; 
+            padding: 0.8rem 2rem; font-weight: 700; text-transform: uppercase; 
+            margin-top: 2rem; border: none; cursor: pointer; 
+        }
+        .blog-post .cta:hover { background: #ff5555; }
+        /* ── FOOTER ── */
+        footer { border-top: 1px solid #333; padding: 2rem 0; text-align: center; }
+        footer .tel { font-size: 1.5rem; font-weight: 700; color: #ff2a2a; }
+        /* ── RESPONSIVE 768 ── */
+        @media (max-width: 768px) {
+            nav ul { display: none; flex-direction: column; width: 100%; background: #111; position: absolute; top: 70px; left: 0; padding: 1rem; }
+            nav ul.active { display: flex; }
+            .hamburger { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .blog-post { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="container">
+        <div class="logo">화곡 셔츠룸</div>
+        <ul id="nav-menu">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#about">소개</a></li>
+            <li><a href="#blog">블로그</a></li>
+            <li><a href="tel:010-6279-0862">전화</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="hero container">
+        <h1>서버 웜업의 진짜 의미</h1>
+        <p class="sub">화곡 셔츠룸 마포지점이 말한다 ─ 규격화된 준비는 가라.</p>
+    </section>
+
+    <article class="blog-post container">
+        <div class="meta">
+            <span class="mono">2025.04.21</span> · <span>by PRO</span> · <span>#서버웜업 #화곡셔츠룸 #마포</span>
+        </div>
+
+        <p>길거리의 콘크리트 냄새, 비릿한 야간 공기, 허름한 골목에서 시작되는 진짜 웜업. 너는 지금까지 무슨 준비를 해왔나? 에어컨 바람 아래 놓인 쇼파, 정해진 코스, 매뉴얼에 적힌 대로 움직이는 직원들. 그게 과연 웜업이라고 할 수 있나?</p>
+
+        <blockquote>
+            "진짜 서버는 길에서 만들어진다. 거친 숨결과 불규칙한 리듬, 그 자체가 웜업이다."
+        </blockquote>
+
+        <p>화곡 셔츠룸 마포지점은 다르다. 우리는 규격화된 소비를 거부한다. 여기서 웜업은 선택이 아니라 필수다. 단순한 술자리가 아니라, 거리에서 시작되는 퍼포먼스의 전초전. 마포의 밤거리를 걸으며 몸을 던질 준비를 해야 한다.</p>
+
+        <h2>왜 거리에서 웜업해야 하는가?</h2>
+        <p>첫째, 분위기는 만들어지는 것이 아니라 느껴지는 것이다. 길거리의 소음, 삐걱이는 간판, 담배 연기 사이로 번지는 네온. 이 모든 게 당신의 감각을 깨운다. 둘째, 규격화된 공간은 당신을 약하게 만든다. 진짜 서버는 불완전함 속에서 빛난다.</p>
+
+        <p>우리의 웜업은 다음과 같이 진행된다:</p>
+        <ul style="list-style: disc inside; margin: 1rem 0;">
+            <li>마포역 3번 출구, 밤 10시. 첫 번째 신호는 길바닥에 내리친다.</li>
+            <li>골목길 5바퀴를 걷는다. 눈빛을 마주쳐라. 셔츠룸은 그 후다.</li>
+            <li>입장 전, 거리의 먼지를 털어내라. 그게 너의 진짜 아이덴티티다.</li>
+        </ul>
+
+        <h2>화곡 셔츠룸이 말하는 세 가지 원칙</h2>
+        <p>첫째, 가짜를 멀리하라. 인테리어에 속지 마라. 진짜는 행동으로 증명된다. 둘째, 주도권을 잡아라. 너의 웜업, 너의 룰. 셋째, 전화하라. 010-6279-0862. 그게 시작이다.</p>
+
+        <blockquote>
+            "세상은 두 부류로 나뉜다. 규격에 순응하는 자, 그리고 규격을 부수는 자. 너는 어느 쪽인가?"
+        </blockquote>
+
+        <p>지금 이 글을 읽고 있다면, 너는 이미 선택의 기로에 서 있다. 계속해서 안전한 웜업에 안주할 것인가, 아니면 진짜 퍼포먼스를 향해 몸을 던질 것인가. 우리는 마포에서 기다린다. 단, 진짜만 오라.</p>
+
+        <a href="tel:010-6279-0862" class="cta">지금 전화하라</a>
+    </article>
+
+    <footer class="container">
+        <p>© 2025 화곡 셔츠룸 마포지점. 모든 선택은 당신의 몫이다.</p>
+        <p class="tel"><a href="tel:010-6279-0862">010-6279-0862</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
