@@ -574,36 +574,100 @@
     </div>
 </header>
 
-<!-- HERO -->
-<section class="hero texture-overlay" id="top">
-    <div class="hero-content">
-        <h1>화곡<br>셔츠룸</h1>
-        <div class="sub">
-            서버를 <span class="text-accent">태울</span> 준비가 됐는가?<br>
-            <span class="mono" style="font-size:0.6em;color:#888;">── 마포 직영 ──</span>
-        </div>
-        <div style="margin-top:64px;display:flex;gap:32px;flex-wrap:wrap;">
-            <a href="tel
-
-<!-- PBN Recent Posts Feed Section -->
-<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
-  <div style="max-width:1100px;margin:0 auto">
-    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-      
-    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
-          <span>⭐ REVIEW</span>
-          <time datetime="2026-06-10">2026-06-10</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
-        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">현대 외교의 불꽃전쟁: 한일 통화스와프 협정 연장 논란 ## 소제목 1: 비공식 채널에서 시작된 갈등비공식적으로 진행되었던 한일 통화스와프 협정 연장 논의는 정상적인 외교 절차를 벗어난 불투명한 방향으로 흘러갔습니다. 중앙은행 간의 비밀 회담에서 양측은 서로 다른 이해</p>
-      </div>
-      <a href="posts/checklist-001-1b6lamk.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
-    </article>
+<main class="mono">
+  <section class="hero full-bleed bg-black text-white">
+    <div class="container hero-content">
+      <p class="sub uppercase tracking-wide">마포 · 화곡 지역 정보</p>
+      <h1 class="text-accent">화곡·마포 담당자를 위한 서버 웜업 기본기</h1>
+      <p>화곡에서 셔츠룸처럼 예약 문의가 특정 시간대에 몰리는 업종을 운영하거나 관련 웹사이트·예약 시스템을 관리한다면, 트래픽이 갑자기 늘어나는 순간 서버가 느려지는 상황은 피하고 싶을 것이다. 이 글은 서버 웜업의 개념과 절차를 정리한 정보성 안내다.</p>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="container section-gap">
+    <h2>서버 웜업이란 무엇인가</h2>
+    <p>서버 웜업은 서비스를 정식으로 열거나 트래픽이 몰리는 시점 이전에, 캐시·커넥션 풀·런타임 등 서버 내부 자원을 미리 준비해 초기 요청에서 발생하는 지연을 줄이는 절차를 말한다. 배포 직후 첫 방문자가 상대적으로 느린 응답을 받는 현상을 완화하려는 목적으로 쓰인다.</p>
+  </section>
+
+  <section class="container grid-3 gap-48">
+    <div class="asymmetric-block brutal-border">
+      <h3 class="text-accent">캐시 예열</h3>
+      <p>자주 조회되는 페이지와 조회 결과를 미리 캐시에 적재해, 첫 요청부터 캐시 히트가 나도록 만드는 단계다.</p>
+    </div>
+    <div class="asymmetric-block brutal-border-accent rotate-neg">
+      <h3 class="text-accent">커넥션 사전 확립</h3>
+      <p>데이터베이스나 외부 연동과의 연결을 미리 맺어 두어, 실제 요청이 들어왔을 때 연결 수립 지연이 더해지지 않도록 한다.</p>
+    </div>
+    <div class="asymmetric-block brutal-border-black rotate-pos">
+      <h3 class="text-accent">런타임 예열</h3>
+      <p>처음 실행될 때만 비용이 드는 초기화 과정을, 트래픽이 적은 배포 직후 시점에 미리 소화시켜 둔다.</p>
+    </div>
+  </section>
+
+  <section class="container grid-2 gap-72 section-gap">
+    <div class="asymmetric-block overlap-left">
+      <h3>웜업을 생략했을 때</h3>
+      <ul>
+        <li>배포 직후 첫 방문자가 상대적으로 느린 응답을 받을 수 있다</li>
+        <li>요청이 순간적으로 몰리면 연결 수립 지연이 누적된다</li>
+        <li>캐시가 비어 있어 동일한 조회가 반복해서 원본 저장소까지 내려간다</li>
+      </ul>
+    </div>
+    <div class="asymmetric-block overlap-right negative-margin-top">
+      <h3>웜업을 거쳤을 때</h3>
+      <ul>
+        <li>초기 캐시가 채워진 상태로 서비스가 시작된다</li>
+        <li>필수 연결이 이미 맺어져 있어 응답 경로가 단순해진다</li>
+        <li>트래픽이 몰리는 시간대 이전에 상태를 점검할 여유가 생긴다</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container section-gap">
+    <div class="skew-box">
+      <h2>체크리스트</h2>
+    </div>
+    <ol>
+      <li>배포 직전 주요 화면에 순차적으로 요청을 보내 캐시를 채운다</li>
+      <li>데이터베이스·외부 연동 커넥션 풀의 최소 연결 수를 미리 설정한다</li>
+      <li>실제 트래픽 패턴과 비슷한 시나리오로 부하를 서서히 늘려 확인한다</li>
+      <li>응답 시간과 오류율 지표를 웜업 전후로 비교해 이상 여부를 살핀다</li>
+      <li>예약 문의가 몰리는 시간대를 파악해 그 이전에 웜업을 마치도록 일정을 잡는다</li>
+    </ol>
+  </section>
+
+  <section class="container section-gap texture-overlay">
+    <h2>자주 하는 실수</h2>
+    <div class="grid-2">
+      <div class="asymmetric-block">
+        <p><span class="fire-emoji">🔥</span> 실제 자주 쓰이는 화면과 무관한 경로로만 웜업 요청을 보내, 정작 많이 찾는 페이지는 차갑게 남는 경우</p>
+      </div>
+      <div class="asymmetric-block">
+        <p><span class="fire-emoji">🔥</span> 배포 직후 곧바로 안내를 노출해, 웜업이 끝나기도 전에 실제 트래픽이 몰리는 경우</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container divider">
+    <h2>용어 정리</h2>
+    <dl>
+      <dt>콜드 스타트</dt>
+      <dd>캐시나 연결이 전혀 준비되지 않은 상태에서 첫 요청을 처리하는 상황을 가리킨다</dd>
+      <dt>캐시 히트율</dt>
+      <dd>요청 중 캐시에서 곧바로 응답한 비율을 뜻하는 개념으로, 웜업 직후에는 상대적으로 낮게 시작한다</dd>
+      <dt>커넥션 풀</dt>
+      <dd>매 요청마다 새로 연결하지 않도록 미리 만들어 둔 연결들의 묶음을 말한다</dd>
+    </dl>
+  </section>
+
+  <section class="cta-block full-bleed bg-accent text-black">
+    <div class="container">
+      <p class="uppercase tracking-wide">문의</p>
+      <p>마포·화곡 지역 관련 문의는 아래 연락처로 확인할 수 있다.</p>
+      <a class="copy white" href="tel:+821062790862">+821062790862</a>
+    </div>
+  </section>
+</main>
+
+
 </body>
 </html>
